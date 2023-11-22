@@ -1,0 +1,8 @@
+cd ./advanced-databases/
+docker-compose up -d
+docker-compose start jupyter mongo cassandra
+
+docker-compose exec cassandra cqlsh
+DROP KEYSPACE IF EXISTS youtube_comments;
+CREATE KEYSPACE youtube_comments WITH REPLICATION = {'class':'SimpleStrategy', 'replication_factor': 1};
+USE youtube_comments;

@@ -1,6 +1,6 @@
 cd ./advanced-databases/
 docker-compose up -d
-docker-compose start jupyter mongo cassandra
+docker-compose start jupyter mongo cassandra neo4j
 
 docker-compose exec cassandra cqlsh
 DROP KEYSPACE IF EXISTS youtube_comments;
